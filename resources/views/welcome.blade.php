@@ -1,100 +1,79 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('content')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+    <section class="h-screen -mb-64 mt-24 px-4 sm:px-6 lg:px-4 xl:px-6 pt-4 pb-4 sm:pb-6 lg:pb-4 xl:pb-6 space-y-4">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+        <ul class="flex flex-wrap -m-4">
 
-            .full-height {
-                height: 100vh;
-            }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+            <li class="p-4 lg:w-1/3 sm:w-1/2 w-full">
+                <div class="h-full  p-8 rounded-lg overflow-hidden  hover:bg-purple-50 hover:border-transparent hover:shadow-lg group block  border border-gray-300">
+                    <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">
+                        Áreas
+                    </h1>
+                    <p class="leading-relaxed mb-3">
+                        Aquí podras registrar informadion de las areas y sus puestos de trabajo
+                    </p>
+                    <a {{-- href="{{ route('', ) }}" --}} 
+                        class="text-indigo-500 inline-flex items-center md-opjjpmhoiojifppkkcdabiobhakljdgm_doc">
+                        Vermas
+                        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
                 </div>
-            @endif
+            </li>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+            <li class="p-4 lg:w-1/3 sm:w-1/2 w-full">
+                <div class="h-full  p-8 rounded-lg overflow-hidden  hover:bg-purple-50 hover:border-transparent hover:shadow-lg group block  border border-gray-300">
+                    <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">
+                        Procesos
+                    </h1>
+                    <p class="leading-relaxed mb-3">
+                        Aquí podras registrar informadion de las Procesos y sunprocesos, gestionar la responsabilidad de estos y asignar áreas a cargo.
+                    </p>
+                    <a {{-- href="{{ route('', ) }}" --}} 
+                        class="text-indigo-500 inline-flex items-center md-opjjpmhoiojifppkkcdabiobhakljdgm_doc">
+                        Vermas
+                        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
                 </div>
-            </div>
-        </div>
-    </body>
-</html>
+            </li>
+
+
+            <li class="p-4 lg:w-1/3 sm:w-1/2 w-full">
+                <div class="h-full  p-8 rounded-lg overflow-hidden  hover:bg-purple-50 hover:border-transparent hover:shadow-lg group block  border border-gray-300">
+                    <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">
+                        Informes
+                    </h1>
+                    <p class="leading-relaxed mb-3">
+                        Aquí podras generar varios informes, asi como tambien ver la tabla Procesos vs Organización
+                    </p>
+                    <a {{-- href="{{ route('', ) }}" --}} 
+                        class="text-indigo-500 inline-flex items-center md-opjjpmhoiojifppkkcdabiobhakljdgm_doc">
+                        Vermas
+                        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14"></path>
+                            <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </li>
+
+
+
+
+
+        </ul>
+
+    </section>
+@endsection

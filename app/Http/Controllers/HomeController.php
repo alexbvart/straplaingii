@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Area;
+use App\Processe;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,7 +26,8 @@ class HomeController extends Controller
     public function index()
     {
         $areas = Area::latest()->paginate();
-        return view('home', compact('areas')); 
+        $processes = Area::latest()->paginate();
+        return view('home', compact('areas','processes')); 
 
     }
 }

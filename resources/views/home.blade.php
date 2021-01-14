@@ -36,7 +36,7 @@
                     <p class="leading-relaxed mb-3">
                         Aquí podras registrar informadion de las Procesos y sunprocesos, gestionar la responsabilidad de estos y asignar áreas a cargo.
                     </p>
-                    <a {{-- href="{{ route('', ) }}" --}} 
+                    <a href="{{ route('processe.show',$processes ) }}" 
                         class="text-indigo-500 inline-flex items-center md-opjjpmhoiojifppkkcdabiobhakljdgm_doc">
                         Vermas
                         <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"

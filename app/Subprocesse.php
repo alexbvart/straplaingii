@@ -13,5 +13,13 @@ class Subprocesse extends Model
     {
         return $this->belongsTo('App\Processe');
     }
+
+    /* *-* 
+    * varios sub procesos vs varios jobstitles 
+    */
+    public function jobstitles()
+    {
+        return $this->belongsToMany('App\Jobtitle');
+    }
     
 }

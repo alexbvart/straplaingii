@@ -13,4 +13,13 @@ class Jobtitle extends Model
     {
         return $this->belongsTo('App\Area');
     }
+
+
+    /* *-* 
+    * varios sub procesos vs varios jobstitles 
+    */
+    public function subprocesse()
+    {
+        return $this->belongsToMany('App\Subprocesse');
+    }
 }

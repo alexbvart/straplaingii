@@ -17,5 +17,18 @@ class DatabaseSeeder extends Seeder
             'email' => 'alexanderbvart@gmail.com',
             'password' => bcrypt('alexx123'), // password
         ]);
+
+        App\Reponsibility::create([
+            'type' => 'Responsabilidad mayor' 
+        ]);
+        App\Reponsibility::create([
+            'type' => 'Participacion mayor en el proceso' 
+        ]);
+        App\Reponsibility::create([
+            'type' => 'Alguna participacion en el proceso' 
+        ]);
+        App\Reponsibility::create([
+            'type' => 'Ninguna participacion en el procesor' 
+        ]);
     }
 }

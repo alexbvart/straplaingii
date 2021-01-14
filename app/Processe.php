@@ -9,6 +9,6 @@ class Processe extends Model
     // un proceso va tener varios subprocesos
     public function subprocesses()
     {
-        return $this->hasMany('App\Subprocesses');
+        return $this->hasMany('App\Subprocesse');
     }
 }

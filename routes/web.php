@@ -23,3 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('area','AreaController');
 Route::resource('processe','ProcessesController');
+Route::get('/jobtitle/{area}/create','JobtitleController@create')
+    ->name('jobtitle.create');
+Route::resource('jobtitle','JobtitleController')    ->except('create');;
+

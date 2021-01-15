@@ -8,7 +8,8 @@ class Jobtitle extends Model
 {
 
     protected $fillable = [
-        'name'
+        'name',
+        'area_id'
     ];
 
     /* 1-* inversa

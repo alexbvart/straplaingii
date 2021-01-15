@@ -8,10 +8,16 @@
 
             <header class="flex items-center justify-between">
                 <h1 class="text-lg leading-6 font-medium text-black">Hola 🖐 empecemos a crear una nueva área en la empresa.</h1>
-                <a href="javascript:history.go(-1);"
+                {{-- <a href="javascript:history.go(-1);"
                     class="hover:bg-purple-200 hover:text-purple-800 
                                             group flex items-center rounded-md bg-purple-100 text-light-purple-600 text-sm font-medium px-4 py-2">
                     Atras
+                </a> --}}
+                <a href="{{ route('area.index') }}"
+                class="hover:bg-purple-200 hover:text-purple-800 
+                        group flex items-center rounded-md bg-purple-100 text-light-purple-600 text-sm font-medium px-4 py-2">
+    
+                ←             Volver a Áreas
                 </a>
             </header>
 

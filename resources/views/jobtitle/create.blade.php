@@ -7,7 +7,7 @@
         <section id="crearProyecto" class="mb-4 mt-8">
 
             <header class="flex items-center justify-between">
-                <h1 class="text-lg leading-6 font-medium text-black">Hola 🖐 asignemos un puesto de trabajo en el área en la empresa.</h1>
+                <h1 class="text-lg leading-6 font-medium text-black">Hola 🖐 asignemos un puesto de trabajo en el área {{$area->name}} .</h1>
                 <a href="javascript:history.go(-1);"
                     class="hover:bg-purple-200 hover:text-purple-800 
                                             group flex items-center rounded-md bg-purple-100 text-light-purple-600 text-sm font-medium px-4 py-2">
@@ -17,11 +17,12 @@
 
             <form
                 method="POST"
-                action="{{route('area.store')}}"
+                action="{{route('jobtitle.store')}}"
             >
                 <x-inputinfo >
                     <x-slot name="label">Nombre</x-slot> name
                 </x-inputinfo>
+                <input type="hidden" value="{{$area->id}}" name="area_id">
 {{--                 <x-inputinfo>
                     <x-slot name="label">Breve descripción</x-slot> description
                 </x-inputinfo>

@@ -35,13 +35,10 @@ $user_id=auth()->user()->id;
                     @foreach ($areas as $area)
                         <li class="p-4 lg:w-1/3 sm:w-1/2 w-full">
                             <div class="h-full  p-8 rounded-lg overflow-hidden 
-                          hover:bg-purple-50 hover:border-transparent hover:shadow-lg group block  border border-gray-300
-                          ">
+                          hover:bg-purple-50 hover:border-transparent hover:shadow-lg group block  border border-gray-300 ">
                                 <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">
                                     {{ $area->name }}
-                                    
                                 </h1>
-                                
                                 <a href="{{ route('area.show', $area) }} "
                                     class="text-indigo-500 inline-flex items-center md-opjjpmhoiojifppkkcdabiobhakljdgm_doc">
                                     Learn More

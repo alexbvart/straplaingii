@@ -5,7 +5,6 @@
      <div x-data="{ open: false }"
          class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-6">
  
- 
          <!-- Version resposive celular -->
  
          <div class="py-4 flex flex-row items-center justify-between md:justify-between ">

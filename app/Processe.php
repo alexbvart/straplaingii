@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Processe extends Model
 {
+    protected $fillable = [
+        'name'
+    ];
 
 
     use Sluggable;

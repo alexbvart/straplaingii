@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Jobtitle extends Model
 {
+
+    protected $fillable = [
+        'name'
+    ];
+
     /* 1-* inversa
     * varios puestos va ser parte de un area 
     */

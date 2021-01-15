@@ -7,7 +7,7 @@
         <section id="crearProyecto" class="mb-4 mt-8">
 
             <header class="flex items-center justify-between">
-                <h1 class="text-lg leading-6 font-medium text-black">Hola 🖐 empecemos a crear un nuevo proceso en la empresa.</h1>
+                <h1 class="text-lg leading-6 font-medium text-black">Hola 🖐 asignemos un puesto de trabajo en el área en la empresa.</h1>
                 <a href="javascript:history.go(-1);"
                     class="hover:bg-purple-200 hover:text-purple-800 
                                             group flex items-center rounded-md bg-purple-100 text-light-purple-600 text-sm font-medium px-4 py-2">
@@ -17,7 +17,7 @@
 
             <form
                 method="POST"
-                action="{{route('processe.store')}}"
+                action="{{route('area.store')}}"
             >
                 <x-inputinfo >
                     <x-slot name="label">Nombre</x-slot> name

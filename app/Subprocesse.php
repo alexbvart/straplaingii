@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Subprocesse extends Model
 {
+    protected $fillable = [
+        'name'
+    ];
+
     /* 1-* inversa
     * varios sub procesos va ser parte de un proceso 
     */

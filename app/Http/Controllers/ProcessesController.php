@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 use App\Processe;
 use App\Subprocesse;
+use App\Reponsibility;
+use App\Area;
+use App\Jobtitle;
 use Illuminate\Http\Request;
 
 class ProcessesController extends Controller
@@ -16,6 +19,7 @@ class ProcessesController extends Controller
     public function index()
     {
         $processes = Processe::latest()->paginate();
+        
         return view('processe.index', compact('processes')); 
     }
 
@@ -36,8 +40,30 @@ class ProcessesController extends Controller
     {
         $processe_id = $processe->id;
         $subprocesses = Subprocesse::where('processe_id','=',$processe_id)->paginate();
+        //llenar listas
+        $reponsibility = Reponsibility::all();
+        $area = Area::all();
+        /* $jobtitle = Jobtitle::all(); */
 
-        return view('processe.show', compact('processe','subprocesses')); 
+        return view('processe.show', compact('processe','subprocesses','reponsibility','area')); 
+        /* return view('processe.show', compact('processe','subprocesses','reponsibility','area','jobtitle'));  */
+    }
+    
+    public function getjob(Request $request)
+    {
+        if (isset($request->texto)) {
+            $jobtitle = Jobtitle::whereJobtitle_id($request->texto)->get();
+            return response()->json([
+                'lista' => $jobtitle,
+                'success' => true
+            ]);
+            /* $jobtitle = Jobtitle::where('area_id','=',$area_id)->all(); */
+        }else{
+            return response()->json([
+                'success' => false
+            ]);
+        }
+        return view('processe.edit', compact('processe'));
     }
     
     public function edit(Processe $processe)

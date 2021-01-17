@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'StraplaingII') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -26,6 +26,8 @@
             @yield('content')
         </main>
         @include('layouts.footer')
+        
     </div>
+    @yield('javascript')
 </body>
 </html>

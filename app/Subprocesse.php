@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Subprocesse extends Model
 {
     protected $fillable = [
-        'name'
+        'name',
+        'processe_id'
     ];
 
     /* 1-* inversa

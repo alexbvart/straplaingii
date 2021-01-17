@@ -12,7 +12,7 @@
         type="text" 
         name="{{$slot}}" 
 
-{{--         value="{{old('$slot')}}"    --}}  
+        value="{{old('$slot')}}"     
 
         required autocomplete="{{$slot}}" 
         autofocus

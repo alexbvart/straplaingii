@@ -53,6 +53,17 @@ $user_id=auth()->user()->id;
                             Editar
                         </a>
                     </td>
+{{--                     <td
+                        class="px-4 py-4 font-medium hover:font-black text-red-500 hover:text-red-700  hover:bg-indigo-50 ">
+                        <form action="{{ route('jobtitle.destroy', $area) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <input
+                                class="text-xs text-center w-full  bg-red-200 text-red-500 rounded font-medium p-3"
+                                type="submit" value="Eliminar"
+                                onclick="return confirm('¿Estas seguro que deseas eliminar?')">
+                        </form>
+                    </td> --}}
                 </tr>
                 @endforeach
 

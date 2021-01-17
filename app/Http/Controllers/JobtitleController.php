@@ -29,6 +29,7 @@ class JobtitleController extends Controller
 
     }
 
+
     public function edit(Jobtitle $jobtitle)
     {
         return view('jobtitle.edit', compact('jobtitle'));
@@ -51,7 +52,11 @@ class JobtitleController extends Controller
     public function destroy(Jobtitle $jobtitle)
     {
       $jobtitle->delete();
-      return back()->with('status', '¡Uff! Ese proyecto ahora es historia.');
+      $area=$jobtitle->area();
+        return dd($area);
+    
+      return view('area.show', compact('area','jobtitles')); 
+      /* return back()->with('status', '¡Uff! Ese proyecto ahora es historia.'); */
     }
 
 }

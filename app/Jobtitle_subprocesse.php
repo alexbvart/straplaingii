@@ -1,13 +1,11 @@
 <?php
 
 namespace App;
-use App\Reponsibility;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Jobtitlesubprocesse extends Model
+class Jobtitle_subprocesse extends Model
 {
-    //
     protected $fillable = [
         'subprocesse_id',
         'jobtitle_id',
@@ -18,5 +16,4 @@ class Jobtitlesubprocesse extends Model
     {
         return $this->belongsTo('App\Reponsibility');
     }
-
 }

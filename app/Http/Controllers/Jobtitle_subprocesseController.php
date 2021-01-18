@@ -1,21 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Jobtitlesubprocesse;
+use App\Jobtitle_subprocesse;
 use App\Reponsibility;
 use App\Jobtitle;
 use App\Subprocesse;
 use DB;
 use Illuminate\Http\Request;
 
-class JobtitlesubprocesseController extends Controller
+class Jobtitle_subprocesseController extends Controller
 {
-
     public function index()
     {
-        $jobtitlesubprocesse = Jobtitle_subprocesse ::latest()->paginate();
-        /* $jobtitlesubprocesse =  DB::table('jobtitle_subprocesse')
-            ->select('id','subprocesse_id','jobtitle_id','reponsibility_id')->get(); */
+        $jobtitlesubprocesse =  DB::table('jobtitle_subprocesse')
+            ->select('id','subprocesse_id','jobtitle_id','reponsibility_id')->get();
+
         /* return dd($jobtitlesubprocesse); */
         $reponsibility = Reponsibility::all();
         $jobtitle = Jobtitle::all();
@@ -68,3 +67,4 @@ class JobtitlesubprocesseController extends Controller
 
     }
 }
+

@@ -52,18 +52,19 @@ class ProcessesController extends Controller
     public function getjob(Request $request)
     {
         if (isset($request->texto)) {
-            $jobtitle = Jobtitle::whereJobtitle_id($request->texto)->get();
+            $jobtitle = Jobtitle::where('area_id','=',$request->texto)->get();
+
+            /* $jobtitle = Jobtitle::whereArea_id($request->texto)->get(); */
             return response()->json([
                 'lista' => $jobtitle,
                 'success' => true
             ]);
-            /* $jobtitle = Jobtitle::where('area_id','=',$area_id)->all(); */
         }else{
             return response()->json([
                 'success' => false
             ]);
         }
-        return view('processe.edit', compact('processe'));
+        return view('processe.show', compact('processe'));
     }
     
     public function edit(Processe $processe)

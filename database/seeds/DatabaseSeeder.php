@@ -75,6 +75,7 @@ class DatabaseSeeder extends Seeder
             'area_id'       =>      6
         ]);
 
+
         App\Area::create([            'name' => 'RR.HH.'         ]);
         App\Jobtitle::create([            
             'name'          =>      'Director de Recursos Humanos',

@@ -35,5 +35,9 @@ Route::get('/subprocesse/{processe}/create','SubprocesseController@create')
 ->name('subprocesse.create');
 Route::resource('subprocesse','SubprocesseController')    ->except('create');
 
-Route::get('/getjob','ProcessesController@getjob')    ->name('processe.getjob');
+Route::post('/getjob','ProcessesController@getjob')    ->name('processe.getjob');
+
+
+Route::resource('jobtitlesubprocesse','JobtitlesubprocesseController');
+
 

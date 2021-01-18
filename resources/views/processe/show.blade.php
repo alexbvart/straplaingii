@@ -68,7 +68,9 @@ $user_id=auth()->user()->id;
                 </x-slot>
 
                 <x-selectone name="area" :one="$area"></x-selectone>
-                <select name="jobtitle" id="_jobtitle"></select>
+                <select name="jobtitle" id="_jobtitle">
+                    <option> Seleciona un puesto de trabajo</option>
+                </select>
                 {{-- <x-selectone name="jobtitle" :one="$jobtitle"></x-selectone> --}}
 
             </x-cardinput> 
@@ -138,7 +140,7 @@ $user_id=auth()->user()->id;
         area.addEventListener('change', (event) => {
             var area_id = event.target.value;    console.log(area_id);
             
-            /* if (area_id != '') { */
+            if (area_id != '') { console.log(area_id);
                 fetch("{{ route('processe.getjob') }}",{
                     method: 'POST',
                     body: JSON.stringify({texto:area_id}),
@@ -150,14 +152,15 @@ $user_id=auth()->user()->id;
                     return response.json()
                 }).then(data => {
                     var opciones = "";
+                    
                     for(let i in data.lista){
                         opciones+= `<option  value="${data.lista[i].id}">
-                            ${data.lista[i].name}</option>`
+                            ${data.lista[i].name}</option>`;
                     }
                     document.getElementById("_jobtitle").innerHTML= opciones;
                 })
                 .catch(error => console.error(error)          );
-            /* } */
+            }
         });
 
     });

@@ -11,7 +11,7 @@ $user_id=auth()->user()->id;
 
 
     <section class="px-4 sm:px-6 lg:px-5 xl:px-6 py-4 sm:pb-6 lg:pb-4 xl:pb-6 space-y-4">
-
+        
 
         <div class="flex flex-col lg:flex-row mx-auto w-full bg-white shadow rounded my-10 ">
     
@@ -32,6 +32,7 @@ $user_id=auth()->user()->id;
                             d="M6 5a1 1 0 011 1v3h3a1 1 0 110 2H7v3a1 1 0 11-2 0v-3H2a1 1 0 110-2h3V6a1 1 0 011-1z" />
                     </svg>
                     <strong>Nuevo puesto de trabajo</strong>
+                    
                 </a>
 
             </x-cardinput> 
@@ -57,44 +58,51 @@ $user_id=auth()->user()->id;
             </x-table>
         </div>
 
+        <form action="{{ route('jobtitlesubprocesse.store') }} " method="post">
+            @method('POST')
+            @csrf
         <div class="flex flex-col lg:flex-row mx-auto w-full bg-white shadow rounded my-10 ">
-    
-            <x-cardinput class="bg-celeste lg:w-1/3">
-                <x-slot name="title">
-                    {{$processe->name}}                
-                </x-slot>
-                <x-slot name="color">
-                    bg-celeste-action
-                </x-slot>
-
-                <x-selectone name="area" :one="$area"></x-selectone>
-                <select name="jobtitle" id="_jobtitle">
-                    <option> Seleciona un puesto de trabajo</option>
-                </select>
-                {{-- <x-selectone name="jobtitle" :one="$jobtitle"></x-selectone> --}}
-
-            </x-cardinput> 
-            <x-table class="lg:w-2/3">
-                <x-slot name="title">
-                    Subprocesos comprendidos
-                </x-slot> 
             
-    
-                @foreach ($subprocesses as $subprocesse)
-                <tr class="hover:bg-gray-100  border-gray-200">
-                    <td class="px-4 py-4 flex justify-between">
-                        <input type="checkbox" class="form-checkbox h-5 w-5 mr-1 text-orange-600 select-check" 
-                            name="subprocesses[]" id="subprocesses_{{$subprocesse->id}}" value="{{$subprocesse->id}}">
+                <x-cardinput class="bg-celeste lg:w-1/3">
+                    <x-slot name="title">
+                        {{$processe->name}}                
+                    </x-slot>
+                    <x-slot name="color">
+                        bg-celeste-action
+                    </x-slot>
 
-                        {{$subprocesse->name}}
+                    <x-selectone name="area" :one="$area"></x-selectone>
+                    <select name="jobtitle" id="_jobtitle">
+                        <option> Seleciona un puesto de trabajo</option>
+                    </select>
+                    <x-btninput class="bg-purple-100  mb-8 mr-8">
+                        ¡Empezar!
+                    </x-btninput>
+                    {{-- <x-selectone name="jobtitle" :one="$jobtitle"></x-selectone> --}}
 
-                        <x-selectresponsibility class="select-responsibility" :items="$reponsibility"></x-selectresponsibility>
-                    </td>
-                </tr>
-                @endforeach
+                </x-cardinput> 
+                <x-table class="lg:w-2/3">
+                    <x-slot name="title">
+                        Subprocesos comprendidos
+                    </x-slot> 
+                
+        
+                    @foreach ($subprocesses as $subprocesse)
+                    <tr class="hover:bg-gray-100  border-gray-200">
+                        <td class="px-4 py-4 flex justify-between">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 mr-1 text-orange-600 select-check" 
+                                name="subprocesses[]" id="subprocesses_{{$subprocesse->id}}" value="{{$subprocesse->id}}">
 
-            </x-table>
-        </div>
+                            {{$subprocesse->name}}
+
+                            <x-selectresponsibility class="select-responsibility" :items="$reponsibility"></x-selectresponsibility>
+                        </td>
+                    </tr>
+                    @endforeach
+
+                </x-table>
+            </div>
+        </form>
 
     </section>
 

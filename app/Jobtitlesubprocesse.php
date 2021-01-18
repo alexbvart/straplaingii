@@ -12,5 +12,6 @@ class Jobtitlesubprocesse extends Model
         'jobtitle_id',
         'reponsibility_id'
     ];
+    
 
 }
